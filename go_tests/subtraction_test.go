@@ -2,7 +2,7 @@ package gotests
 
 import "testing"
 
-func TestSubstraction(t *testing.T) {
+func TestSubtraction(t *testing.T) {
 	tests := []struct {
 		name     string
 		a        int
