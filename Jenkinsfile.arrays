@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    tools {
+        go '1.25.1'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Test all suites on arrays') {
+            steps {
+                dir('go_tests') {
+                    sh 'go version'
+                    sh 'go test -v -run "TestAddElement|TestRemoveElement|TestGetElement"'
+                }
+            }
+        }
+    }
+}

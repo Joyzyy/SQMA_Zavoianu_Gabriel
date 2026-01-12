@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Run all tests jobs') {
+            parallel {
+                stage('Math Operations Tests') {
+                    steps {
+                        build job: 'sqma_test_go'
+                    }
+                }
+                stage('Arrays Tests') {
+                    steps {
+                        build job: 'sqma_test_go_arrays'
+                    }
+                }
+            }
+        }
+    }
+}
