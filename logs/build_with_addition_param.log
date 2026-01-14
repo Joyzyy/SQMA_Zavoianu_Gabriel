@@ -1,0 +1,111 @@
+Started by user admin
+
+Obtained Jenkinsfile from git https://github.com/Joyzyy/SQMA_Zavoianu_Gabriel.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins
+ in /var/jenkins_home/workspace/sqma_test_go
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/sqma_test_go/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/Joyzyy/SQMA_Zavoianu_Gabriel.git # timeout=10
+Fetching upstream changes from https://github.com/Joyzyy/SQMA_Zavoianu_Gabriel.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.47.3'
+ > git fetch --tags --force --progress -- https://github.com/Joyzyy/SQMA_Zavoianu_Gabriel.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 87bb4a7fc6bb3967cedcb7d892ffb114fb979387 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 87bb4a7fc6bb3967cedcb7d892ffb114fb979387 # timeout=10
+Commit message: "add Jenkinsfile"
+ > git rev-list --no-walk 87bb4a7fc6bb3967cedcb7d892ffb114fb979387 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/sqma_test_go/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/Joyzyy/SQMA_Zavoianu_Gabriel.git # timeout=10
+Fetching upstream changes from https://github.com/Joyzyy/SQMA_Zavoianu_Gabriel.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.47.3'
+ > git fetch --tags --force --progress -- https://github.com/Joyzyy/SQMA_Zavoianu_Gabriel.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 87bb4a7fc6bb3967cedcb7d892ffb114fb979387 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 87bb4a7fc6bb3967cedcb7d892ffb114fb979387 # timeout=10
+Commit message: "add Jenkinsfile"
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] dir
+Running in /var/jenkins_home/workspace/sqma_test_go/go_tests
+[Pipeline] {
+[Pipeline] sh
++ go version
+go version go1.25.1 linux/arm64
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sh
++ go test -v -count=1 -run ^TestAddition$
+=== RUN   TestAddition
+=== RUN   TestAddition/positive_numbers
+=== RUN   TestAddition/negative_numbers
+=== RUN   TestAddition/mixed_numbers
+=== RUN   TestAddition/zero_values
+=== RUN   TestAddition/with_zero
+--- PASS: TestAddition (0.00s)
+    --- PASS: TestAddition/positive_numbers (0.00s)
+    --- PASS: TestAddition/negative_numbers (0.00s)
+    --- PASS: TestAddition/mixed_numbers (0.00s)
+    --- PASS: TestAddition/zero_values (0.00s)
+    --- PASS: TestAddition/with_zero (0.00s)
+PASS
+ok  	ism/sqma	0.001s
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

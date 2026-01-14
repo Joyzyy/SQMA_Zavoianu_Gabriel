@@ -1,0 +1,104 @@
+Started by user admin
+
+Obtained Jenkinsfile.arrays from git https://github.com/Joyzyy/SQMA_Zavoianu_Gabriel.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins
+ in /var/jenkins_home/workspace/sqma_test_go_arrays
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+Cloning the remote Git repository
+Cloning repository https://github.com/Joyzyy/SQMA_Zavoianu_Gabriel.git
+ > git init /var/jenkins_home/workspace/sqma_test_go_arrays # timeout=10
+Fetching upstream changes from https://github.com/Joyzyy/SQMA_Zavoianu_Gabriel.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.47.3'
+ > git fetch --tags --force --progress -- https://github.com/Joyzyy/SQMA_Zavoianu_Gabriel.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/Joyzyy/SQMA_Zavoianu_Gabriel.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision d8acb6a285ee071b81ae3e5caa2a83b19e822653 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f d8acb6a285ee071b81ae3e5caa2a83b19e822653 # timeout=10
+Commit message: "arrays tests and parallel pipeline"
+First time build. Skipping changelog.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/sqma_test_go_arrays/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/Joyzyy/SQMA_Zavoianu_Gabriel.git # timeout=10
+Fetching upstream changes from https://github.com/Joyzyy/SQMA_Zavoianu_Gabriel.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.47.3'
+ > git fetch --tags --force --progress -- https://github.com/Joyzyy/SQMA_Zavoianu_Gabriel.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision d8acb6a285ee071b81ae3e5caa2a83b19e822653 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f d8acb6a285ee071b81ae3e5caa2a83b19e822653 # timeout=10
+Commit message: "arrays tests and parallel pipeline"
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test all suites on arrays)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] dir
+Running in /var/jenkins_home/workspace/sqma_test_go_arrays/go_tests
+[Pipeline] {
+[Pipeline] sh
++ go version
+go version go1.25.1 linux/arm64
+[Pipeline] sh
++ go test -v -run TestAddElement|TestRemoveElement|TestGetElement
+=== RUN   TestAddElement
+--- PASS: TestAddElement (0.00s)
+=== RUN   TestRemoveElement
+--- PASS: TestRemoveElement (0.00s)
+=== RUN   TestGetElement
+--- PASS: TestGetElement (0.00s)
+PASS
+ok  	ism/sqma	0.001s
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
